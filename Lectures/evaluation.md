@@ -1,7 +1,7 @@
 ### Notes for lectures 1.2 - Elements of Programming and 1.3 - Evaluation Strategies and Termination
 
 # Evaluation
-A non-preimitive expression is eval'ed as follows:
+A non-primitive expression is eval'ed as follows:
 1. Take leftmost operator
 2. Eval its operands (left -> right)
 3. Apply the op to the operands
