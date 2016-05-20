@@ -25,7 +25,7 @@ def power(x: Double, y: Int)
 ### The substitution model
 This scheme of expression evaluation is called the substitution model. The idea behind this model is that all evaluation does is *reduce* an expression to a value. It can be applied to all expressions, as long as they have no side effects. The substitution model is formalized in the lambda-calculus, which gives a foundation for functional programming!
 
-For example, we can't write a simple expression like var c = 1; c++, because post-incrementing c will introduce side effects.
+For example, we can't write a simple expression like ```var c = 1; c++```, because post-incrementing ```c``` will introduce side effects.
 
 ### Termination
 - Does every expression reduce to a value (in a finite # of steps)?
