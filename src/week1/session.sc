@@ -33,9 +33,6 @@ object session {
       else sqrtIter(improve(guess))
 
     def isGoodEnough(guess: Double) =
-    // naive variant
-    //    abs(guess * guess - x) < .001
-    // working variant
       abs(guess * guess - x) / x < 0.001
 
     def improve(guess: Double) =
