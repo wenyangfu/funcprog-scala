@@ -23,12 +23,12 @@ def power(x: Double, y: Int)
 ```
 
 ### The substitution model
-This scheme of expression evaluation is called the substitution model. The idea behind this model is that all evaluation does is *reduce* an expression to a value. It can be applied to all exprs, as long as they have no side effects. The substitution model is formalized in the lambda-calculus, which gives a foundation for functional programming!
+This scheme of expression evaluation is called the substitution model. The idea behind this model is that all evaluation does is *reduce* an expression to a value. It can be applied to all expressions, as long as they have no side effects. The substitution model is formalized in the lambda-calculus, which gives a foundation for functional programming!
 
 For example, we can't write a simple expression like var c = 1; c++, because post-incrementing c will introduce side effects.
 
 ### Termination
-- Does every expr reduce to a value (in a finite # of steps)?
+- Does every expression reduce to a value (in a finite # of steps)?
 - Nope!
 	- Counterexample:
 ```scala
@@ -36,7 +36,7 @@ def loop: Int = loop
 // loop-> loop -> reduces ad infinitum...
 ``` 
 ### Changing the evaluation strategy
-The interpreter reduces func args to values before rewriting the func application. One could alternatively apply the function to unreduced arguments. For instance:
+The interpreter reduces function arguments to values before rewriting the function application. One could alternatively apply the function to unreduced arguments. For instance:
 ```scala
 sumOfSquares(3, 2+2)
 // Don't reduce to 4, simply pass 2+2 to the function.
@@ -48,7 +48,7 @@ square(3) + square(2+2)
 ### Call-by-name and call-by-value
 The first evaluation strategy is known as *call-by-value*, the second is *call-by-name*. Both strategies reduce to the same final values as long as:
 
-- The reduced exprs consists of pure functions, and
+- The reduced expressions consists of pure functions, and
 - both evaluations terminate.
 
 Call-by-value (CBV) has the advantage that it evaluates every function arg only once.
@@ -67,7 +67,7 @@ and consider the expr ```first(1, loop)```.
 Under CBN, value is 1. Under CBV, loop will be evaluated infinitely and fail.
 
 ### Scala's evaluation strategy
-Scala normally uses call-by-value. But if the type of a func parameter starts with => it uses call-by-name.
+Scala normally uses call-by-value. But if the type of a function parameter starts with => it uses call-by-name.
 For example, we can force call-by-name by doing the following:
 ```scala
 def constOne(X: Int, y: => Int) = 1
