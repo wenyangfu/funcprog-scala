@@ -2,9 +2,11 @@
 
 # Evaluation
 A non-primitive expression is eval'ed as follows:
+
 1. Take leftmost operator
 2. Eval its operands (left -> right)
 3. Apply the op to the operands
+
 A name is eval'ed by replacing it w/ the RHS of its defn. The eval process stops once it results in a value - for the moment, a value is just a number.Later on, we'll consider many other types of values.
 
 ### Parameters
